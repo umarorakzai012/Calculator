@@ -29,10 +29,22 @@ int main(){
         break;
 
     case '/':
-        cout << "Result of Division: " << (num1 / num2);
+        try
+        {
+            if(num2 == 0){
+                throw exception();
+            }
+            cout << "Result of Division: " << (num1 / num2);
+        }
+        catch(const exception& e)
+        {
+            cerr << "Cannot divide by zero" << '\n';
+        }
+        
         break;
 
     default:
+        cout << "Choose correct option please!";
         break;
     }
 
